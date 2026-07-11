@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Central Axios instance — all API calls in the app go through this.
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000',
+  baseURL: 'https://finrelief-ai.onrender.com',
   headers: {
     'Content-Type': 'application/json',
   },
