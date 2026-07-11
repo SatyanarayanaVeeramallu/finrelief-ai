@@ -8,6 +8,7 @@ import FinancialAnalysis from './pages/FinancialAnalysis'
 import AILetter from './pages/AILetter'
 import NegotiationStrategy from './pages/NegotiationStrategy'
 import NotFound from './pages/NotFound'
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -27,9 +28,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      <footer className="app-footer">
-        <p>FinRelief AI © {new Date().getFullYear()} — AI-Powered Debt Relief Platform</p>
-      </footer>
+     <Footer />
     </div>
   )
 }
