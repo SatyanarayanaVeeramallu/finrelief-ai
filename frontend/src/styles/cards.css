@@ -1,0 +1,230 @@
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 22px;
+  margin-bottom: 22px;
+}
+
+/* Stat grid on dashboard */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-card.accent-blue::before { background: var(--color-blue); }
+.stat-card.accent-red::before { background: var(--color-red); }
+.stat-card.accent-green::before { background: var(--color-green); }
+.stat-card.accent-purple::before { background: var(--color-purple); }
+.stat-card.accent-amber::before { background: var(--color-amber); }
+
+.stat-card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.accent-blue .stat-card-icon { background: var(--color-blue-bg); }
+.accent-red .stat-card-icon { background: var(--color-red-bg); }
+.accent-green .stat-card-icon { background: var(--color-green-bg); }
+.accent-purple .stat-card-icon { background: var(--color-purple-bg); }
+.accent-amber .stat-card-icon { background: var(--color-amber-bg); }
+
+.stat-card-title {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.stat-card-value {
+  font-size: 1.5rem;
+  margin-top: 4px;
+  color: var(--color-text);
+}
+
+.stat-card-subtitle {
+  font-size: 0.78rem;
+  color: var(--color-text-soft);
+  margin-top: 4px;
+}
+
+/* Summary card */
+.summary-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.summary-text {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.mini-loan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mini-loan-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 4px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+.mini-loan-row:last-child {
+  border-bottom: none;
+}
+
+.mini-loan-name {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Analysis / strategy metric cards */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.metric-card {
+  margin-bottom: 0;
+}
+
+.metric-card.wide {
+  grid-column: 1 / -1;
+}
+
+.metric-label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+
+.metric-value {
+  font-size: 1.9rem;
+  color: var(--color-primary);
+}
+
+.metric-hint {
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
+  margin-top: 8px;
+}
+
+.metric-badge-row {
+  margin: 4px 0 6px;
+}
+
+.recommendation-text {
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  font-size: 0.97rem;
+  white-space: pre-line;
+}
+
+/* Loan selector */
+.loan-selector-hint {
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+
+.loan-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.loan-selector-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.loan-selector-card:hover {
+  border-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.loan-selector-name {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.loan-selector-sub {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 980px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .analysis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+}
