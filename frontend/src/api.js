@@ -1,7 +1,10 @@
-import api from './api'
+import axios from "axios";
 
-// GET /generate-letter/{loan_id} — AI generated negotiation letter
-export const generateLetter = async (loanId) => {
-  const res = await api.get(`/generate-letter/${loanId}`)
-  return res.data
-}
+const api = axios.create({
+  baseURL: "https://finrelief-ai.onrender.com",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+export default api;
