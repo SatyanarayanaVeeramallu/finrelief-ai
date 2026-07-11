@@ -1,16 +1,4 @@
-# Python
-venv/
-__pycache__/
-*.pyc
+node_modules
+dist
 .env
-
-# Database
-*.db
-
-# Frontend
-node_modules/
-dist/
-build/
-
-# VS Code
-.vscode/
+.DS_Store
